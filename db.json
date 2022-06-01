@@ -1,3 +1,11 @@
 {
-    "products": []
+  "products": [
+    {
+      "title": "asd",
+      "description": "asd",
+      "price": "asd",
+      "image": "https://i.pinimg.com/550x/07/9e/6b/079e6b3220ef9b4994c58b560f64ea25.jpg",
+      "id": 1
+    }
+  ]
 }

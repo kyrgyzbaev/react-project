@@ -4,14 +4,17 @@ import Header from './components/Header/Header';
 import Routing from './Routing';
 
 import './App.css';
+import ProductsContextProvider from './contexts/productsContext';
 
 const App = () => {
+
+
   return (
-    <div>
+    <ProductsContextProvider>
       <Header />
       <Routing />
       <Footer />
-    </div>
+    </ProductsContextProvider>
   );
 };
 
