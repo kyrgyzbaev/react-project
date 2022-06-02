@@ -1,14 +1,19 @@
 import { Box, Breadcrumbs, Button, Container, Link, TextField, Typography } from '@mui/material';
-import React, { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { productsContext } from '../../contexts/productsContext';
+import Loader from '../Loader/Loader';
 
 // title, description, price, image
-const AddProductForm = () => {
+const EditProductForm = () => {
 
-     const {createProduct} = useContext(productsContext)
+     const {getOneProduct, oneProduct, updateProduct} = useContext(productsContext)
 
      const navigate = useNavigate()
+  
+     const {id} = useParams()
+
+    // console.log(oneProduct, getOneProduct);
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -16,21 +21,34 @@ const AddProductForm = () => {
     const [image, setImage] = useState('')
 
     function handleValues(){
-       let newProduct = {
+       let editedProduct = {
         title,
         description,
         price,
         image
        } 
        if(!title.trim() || !description.trim() || !price.trim() || !image.trim()){
-        alert("запарапр")
-        return
-       } 
-    createProduct(newProduct)
-    navigate("/products")
+           alert("запарапр")
+           return
+       }
+       updateProduct(id, editedProduct)
+       navigate("/products")
     }
 
-    return (
+    useEffect(() => {
+     getOneProduct(id)
+    },[])
+
+    useEffect(() => {
+     if(oneProduct){
+         setTitle(oneProduct.title)
+         setPrice(oneProduct.price)
+         setImage(oneProduct.image)
+         setDescription(oneProduct.description)
+     }
+    },[oneProduct])
+
+    return oneProduct ? (
         <Container maxWidth="sm">
             <Breadcrumbs aria-label="breadcrumb">
             <Link underline="hover" color="inherit" href="/">
@@ -44,16 +62,16 @@ const AddProductForm = () => {
                  Products
             </Link>
             <Typography 
-            color="text.primary">Add
+            color="text.primary">Edit
             </Typography>
-        </Breadcrumbs>
+            </Breadcrumbs>
         <Box 
         display={"flex"} 
         flexDirection={"column"} 
         padding={"30px"} 
         text-align={"center"}>
         <Typography variant="h3" component="h2">
-            Add new product
+           Edit product
         </Typography>
         <TextField 
         style={{margin: "10px"}}
@@ -93,11 +111,11 @@ const AddProductForm = () => {
         color="success"
         onClick={handleValues}
         >
-        Add product
+        Save product
        </Button>
         </Box>
         </Container>
-    );
+    ): <Loader />
 };
 
-export default AddProductForm;
+export default EditProductForm;

@@ -1,28 +1,40 @@
 import { Button, Card,  CardContent, CardMedia, Typography } from '@mui/material';
-import React from 'react';
-
+import React, { useContext } from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { AddShoppingCart, Delete, Edit, More } from '@mui/icons-material';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
+import { useNavigate } from 'react-router-dom';
+import {productsContext} from '../../contexts/productsContext'
 const ProductCard = ({item}) => {
-    console.log(item);
+    const navigate = useNavigate()
+    const {deleteProduct} = useContext(productsContext)
     return (
         <Card sx={{ maxWidth: 300, margin: "10px" }}>
       <CardMedia
         component="img"
         alt="green iguana"
         height="200"
-        image="https://i.pinimg.com/550x/07/9e/6b/079e6b3220ef9b4994c58b560f64ea25.jpg"
+        image={item.image}
       />
       <CardContent>
+
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          {item.title}
         </Typography>
+
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {item.description.length > 20 ? `${item.description.slice(0,20)}...`: `${item.description}` }
         </Typography>
+        
       </CardContent>
       <Card>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" onClick={() => deleteProduct(item.id)} ><Delete /></Button>
+        <Button size="small" onClick={() => navigate(`/edit/${item.id}`)} ><Edit /></Button>
+        <Button size="small" ><ShoppingCart /></Button>
+        <Button size="small" onClick={() => navigate(`/products/${item.id}`)} ><More /></Button>
       </Card>
     </Card>
     );
