@@ -1,18 +1,67 @@
 {
   "products": [
     {
-      "title": " ",
-      "description": "jfjkh",
-      "price": "26",
-      "image": "https://s11.favim.com/orig/7/787/7879/78792/icon-hxh-killua-zoldyck-Favim.com-7879245.jpg",
+      "title": " killua",
+      "description": "killer",
+      "price": 10000,
+      "image": "https://media.sketchfab.com/models/56ce35ab533e4e58838252ea903e8da4/thumbnails/cc2c076c1eee44fa8b8939450733c343/7c285a720c8645eba70e71d779a1d50a.jpeg",
       "id": 1
     },
     {
-      "title": "asa",
-      "description": "asd",
-      "price": "sad",
-      "image": "asd",
+      "title": "gon",
+      "description": "good boy",
+      "price": 10000,
+      "image": " https://images6.fanpop.com/image/photos/38000000/-Gon-hunter-x-hunter-38039395-500-500.gif",
       "id": 2
+    },
+    {
+      "title": "Naruto",
+      "description": "hokage",
+      "price": 10000,
+      "image": "https://img5.goodfon.ru/wallpaper/nbig/7/bd/naruto-uzumaki-naruto-paren-sila.jpg",
+      "id": 3
+    },
+    {
+      "title": "Sasuke",
+      "description": "best friend naruto",
+      "price": 10000,
+      "image": "https://www.anime-internet.com/content/images/2021/08/maxresdefault--6--6.jpg",
+      "id": 4
+    },
+    {
+      "title": "asd",
+      "description": "asd12",
+      "price": 123123,
+      "image": "asds",
+      "id": 5
+    },
+    {
+      "title": "sdf",
+      "description": "sdf",
+      "price": 123123,
+      "image": "asdasd",
+      "id": 6
+    },
+    {
+      "title": "Sakura",
+      "description": "sakura",
+      "price": "2000",
+      "image": "https://img1.ak.crunchyroll.com/i/spire4/f81f274cc7eb40a2b77b29f4a96deb341624558819_main.jpg",
+      "id": 7
+    },
+    {
+      "title": "Sakura",
+      "description": "sakura",
+      "price": 2000,
+      "image": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/04/6-Sakura-with-Byakugou.jpg",
+      "id": 8
+    },
+    {
+      "title": "Hinata",
+      "description": "hinata",
+      "price": 3000,
+      "image": "https://avatars.mds.yandex.net/get-zen_doc/3957666/pub_5f5ef40e93cc6c72ffa7fd9c_5f61b568249b32282bb0a33e/scale_1200",
+      "id": 9
     }
   ]
 }
